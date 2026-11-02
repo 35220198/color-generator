@@ -1,0 +1,121 @@
+/* ================================
+   HARMONY MODES
+================================ */
+
+.harmony-section {
+    margin-bottom: 25px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.1rem;
+
+    color: var(--text-primary);
+}
+
+.section-heading p {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+
+    margin-top: 3px;
+}
+
+.current-mode {
+    background: #eef2ff;
+    color: var(--accent);
+
+    padding: 7px 12px;
+    border-radius: 20px;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+
+/* MODE BUTTONS */
+
+.harmony-modes {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 8px;
+}
+
+.mode-btn {
+    border: 1px solid var(--border);
+
+    background: white;
+
+    padding: 12px 8px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    color: var(--text-secondary);
+
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 7px;
+
+    transition: 0.25s ease;
+}
+
+.mode-btn i {
+    font-size: 1rem;
+}
+
+.mode-btn:hover {
+    border-color: var(--accent);
+
+    color: var(--accent);
+
+    transform: translateY(-2px);
+}
+
+.mode-btn.active {
+    background: var(--accent);
+
+    border-color: var(--accent);
+
+    color: white;
+
+    box-shadow:
+        0 8px 18px
+        rgba(99, 102, 241, 0.25);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .harmony-modes {
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+
+    .harmony-modes {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}

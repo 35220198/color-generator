@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ColorFlow | Professional Palette Generator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+
+                <div>
+                    <h1>ColorFlow</h1>
+                    <p>Professional color palette generator</p>
+                </div>
+
+            </div>
+
+            <button class="history-btn" id="undo-btn" title="Restore previous palette">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>Undo</span>
+            </button>
+
+        </header>
+
+
+        <!-- HARMONY MODES -->
+        <section class="harmony-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Color Harmony</h2>
+                    <p>Choose a professional palette style</p>
+                </div>
+
+                <div class="current-mode" id="current-mode">
+                    Random
+                </div>
+
+            </div>
+
+
+            <div class="harmony-modes">
+
+                <button class="mode-btn active" data-mode="random">
+                    <i class="fa-solid fa-shuffle"></i>
+                    <span>Random</span>
+                </button>
+
+                <button class="mode-btn" data-mode="analogous">
+                    <i class="fa-solid fa-circle-nodes"></i>
+                    <span>Analogous</span>
+                </button>
+
+                <button class="mode-btn" data-mode="complementary">
+                    <i class="fa-solid fa-arrows-left-right"></i>
+                    <span>Complementary</span>
+                </button>
+
+                <button class="mode-btn" data-mode="triadic">
+                    <i class="fa-solid fa-draw-polygon"></i>
+                    <span>Triadic</span>
+                </button>
+
+                <button class="mode-btn" data-mode="monochromatic">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Mono</span>
+                </button>
+
+                <button class="mode-btn" data-mode="pastel">
+                    <i class="fa-solid fa-cloud"></i>
+                    <span>Pastel</span>
+                </button>
+
+                <button class="mode-btn" data-mode="dark">
+                    <i class="fa-solid fa-moon"></i>
+                    <span>Dark</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PALETTE -->
+        <section class="palette-container" id="palette-container">
+            <!-- Generated with JavaScript -->
+        </section>
+
+
+        <!-- CONTROLS -->
+        <section class="controls">
+
+            <button class="generate-btn" id="generate-btn">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Generate Palette
+
+            </button>
+
+            <p class="keyboard-tip">
+
+                <i class="fa-regular fa-keyboard"></i>
+
+                Press <kbd>SPACE</kbd> to generate
+
+            </p>
+
+        </section>
+
+
+        <!-- DETAILS -->
+        <section class="palette-details">
+
+            <div class="detail-card">
+
+                <span class="detail-label">
+                    Palette Colors
+                </span>
+
+                <strong>
+                    5 Colors
+                </strong>
+
+            </div>
+
+
+            <div class="detail-card">
+
+                <span class="detail-label">
+                    Harmony Mode
+                </span>
+
+                <strong id="mode-display">
+                    Random
+                </strong>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">
+
+        <i class="fa-solid fa-check"></i>
+
+        <span id="toast-message">
+            Copied to clipboard!
+        </span>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

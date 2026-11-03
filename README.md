@@ -1,40 +1,33 @@
-# 🎨 ColorFlow — Professional Color Palette Generator
+# 🎨 Aether Studio v3.0 — Enterprise Color Design System
 
-ColorFlow is a modern, interactive color palette generator designed to help designers, developers, and creative professionals discover beautiful and harmonious color combinations.
+A professional, high-performance web application designed to generate harmonized color palettes, calculate professional color tokens, and export design schemas instantly. Built with clean enterprise-grade architecture and a modern glassmorphic interface.
 
-The application uses color harmony principles to generate palettes based on mathematical relationships within the color wheel.
+---
 
-## ✨ Features
+## 📁 Project Structure & Files
 
-### 🎨 Professional Color Harmony Modes
+Your project requires three clean, separate files saved inside the same directory:
 
-ColorFlow includes seven palette generation modes:
+1. **`index.html`** — The semantic application shell containing the top navigation bar, studio control panel, interactive color swatch matrix, export modal dialog, and global toast notifications.
+2. **`style.css`** — A scalable design-token system utilizing CSS custom properties, smooth cubic-bezier transitions, deep ambient glows, responsive layouts, and dark-mode glassmorphic styling.
+3. **`script.js`** — An object-oriented ES6 application class handling algorithmic color harmony generation (via HSL mapping), DOM event delegation, robust clipboard fallbacks, keyboard shortcuts, and multi-format configuration exports (CSS, Tailwind, JSON).
 
-- **Random** — Generates five completely random colors.
-- **Analogous** — Creates colors positioned close together on the color wheel.
-- **Complementary** — Generates contrasting colors positioned opposite each other.
-- **Triadic** — Creates three balanced colors spaced evenly around the color wheel.
-- **Monochromatic** — Generates multiple shades and tones from a single hue.
-- **Pastel** — Creates soft colors with high lightness and controlled saturation.
-- **Dark & Moody** — Generates deep, cinematic colors with lower lightness.
+---
 
-### 🔒 Lock Colors
+## 🚀 How to Run Locally
 
-Found a color you love? Lock it before generating a new palette.
+Because modern web browsers enforce strict security policies (`CORS`) that block local file-to-file communication when opening via the standard `file://` protocol:
 
-Locked colors remain unchanged while the rest of the palette generates new colors.
+1. Open your project folder in a modern code editor like **VS Code**.
+2. Install the **Live Server** extension (if you haven't already).
+3. Right-click on `index.html` and select **"Open with Live Server"**, or click **"Go Live"** at the bottom right of your VS Code status bar.
 
-### 📋 Copy Colors
+---
 
-Copy a color's HEX value by:
+## ✨ Key Global Features
 
-- Clicking directly on the color.
-- Clicking the copy button beside the HEX code.
-
-A notification confirms when the color has been copied successfully.
-
-### 🔄 Undo Palettes
-
-ColorFlow remembers your previous palette, allowing you to quickly restore it using the **Undo** button.
-
-### ⌨
+* **Algorithmic Harmony Generation:** Automatically synthesizes pleasing, balanced color schemes using an HSL-to-Hex mathematical mapping algorithm.
+* **Instant Clipboard Copying:** Click any color card or hex token to copy it instantly to your clipboard, backed by an ultra-reliable fallback buffer.
+* **Keyboard Shortcuts:** Press the **`Spacebar`** anywhere on the screen to instantly synthesize a brand-new palette.
+* **Export Suite:** Click **Export Config** to view and copy your active palette formatted directly for **CSS Custom Properties**, **Tailwind CSS configuration**, or **JSON data**.
+* **Global Accessibility:** Built with full semantic tags, ARIA roles, and high-contrast styling.

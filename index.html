@@ -1,182 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ColorFlow | Professional Palette Generator</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aether Studio | Enterprise Color Design System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
 
-    <main class="app">
+  <div class="app-container">
+    <header class="app-topbar">
+      <div class="brand">
+        <div class="brand-icon"><i class="fas fa-palette"></i></div>
+        <span>Aether Studio <small>v3.0</small></span>
+      </div>
+      <div class="topbar-actions">
+        <button id="export-btn" class="secondary-btn" type="button" aria-label="Export Palette">
+          <i class="fas fa-code"></i> <span>Export Config</span>
+        </button>
+      </div>
+    </header>
 
-        <!-- HEADER -->
-        <header class="header">
+    <main class="studio-card">
+      <div class="studio-intro">
+        <div class="pill-badge"><span class="pulse-dot"></span> Algorithmic Harmony Engine</div>
+        <h1>Engineered Color Palettes</h1>
+        <p>Generate professionally balanced color tokens with automatic WCAG contrast compliance.</p>
+      </div>
 
-            <div class="brand">
+      <div class="action-toolbar">
+        <button id="generate-btn" class="primary-btn" type="button">
+          <i class="fas fa-wand-magic-sparkles"></i>
+          <span>Generate Scheme</span>
+          <kbd>Space</kbd>
+        </button>
+        <div class="toolbar-info">
+          <i class="fas fa-circle-info"></i> Click any color card to instantly copy token
+        </div>
+      </div>
 
-                <div class="brand-icon">
-                    <i class="fa-solid fa-droplet"></i>
-                </div>
-
-                <div>
-                    <h1>ColorFlow</h1>
-                    <p>Professional color palette generator</p>
-                </div>
-
-            </div>
-
-            <button class="history-btn" id="undo-btn" title="Restore previous palette">
-                <i class="fa-solid fa-clock-rotate-left"></i>
-                <span>Undo</span>
-            </button>
-
-        </header>
-
-
-        <!-- HARMONY MODES -->
-        <section class="harmony-section">
-
-            <div class="section-heading">
-
-                <div>
-                    <h2>Color Harmony</h2>
-                    <p>Choose a professional palette style</p>
-                </div>
-
-                <div class="current-mode" id="current-mode">
-                    Random
-                </div>
-
-            </div>
-
-
-            <div class="harmony-modes">
-
-                <button class="mode-btn active" data-mode="random">
-                    <i class="fa-solid fa-shuffle"></i>
-                    <span>Random</span>
-                </button>
-
-                <button class="mode-btn" data-mode="analogous">
-                    <i class="fa-solid fa-circle-nodes"></i>
-                    <span>Analogous</span>
-                </button>
-
-                <button class="mode-btn" data-mode="complementary">
-                    <i class="fa-solid fa-arrows-left-right"></i>
-                    <span>Complementary</span>
-                </button>
-
-                <button class="mode-btn" data-mode="triadic">
-                    <i class="fa-solid fa-draw-polygon"></i>
-                    <span>Triadic</span>
-                </button>
-
-                <button class="mode-btn" data-mode="monochromatic">
-                    <i class="fa-solid fa-layer-group"></i>
-                    <span>Mono</span>
-                </button>
-
-                <button class="mode-btn" data-mode="pastel">
-                    <i class="fa-solid fa-cloud"></i>
-                    <span>Pastel</span>
-                </button>
-
-                <button class="mode-btn" data-mode="dark">
-                    <i class="fa-solid fa-moon"></i>
-                    <span>Dark</span>
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- PALETTE -->
-        <section class="palette-container" id="palette-container">
-            <!-- Generated with JavaScript -->
-        </section>
-
-
-        <!-- CONTROLS -->
-        <section class="controls">
-
-            <button class="generate-btn" id="generate-btn">
-
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-
-                Generate Palette
-
-            </button>
-
-            <p class="keyboard-tip">
-
-                <i class="fa-regular fa-keyboard"></i>
-
-                Press <kbd>SPACE</kbd> to generate
-
-            </p>
-
-        </section>
-
-
-        <!-- DETAILS -->
-        <section class="palette-details">
-
-            <div class="detail-card">
-
-                <span class="detail-label">
-                    Palette Colors
-                </span>
-
-                <strong>
-                    5 Colors
-                </strong>
-
-            </div>
-
-
-            <div class="detail-card">
-
-                <span class="detail-label">
-                    Harmony Mode
-                </span>
-
-                <strong id="mode-display">
-                    Random
-                </strong>
-
-            </div>
-
-        </section>
-
+      <section class="palette-matrix" aria-label="Generated Color Swatches">
+        <!-- Rendered dynamically by JS -->
+      </section>
     </main>
+  </div>
 
-
-    <!-- TOAST -->
-    <div class="toast" id="toast">
-
-        <i class="fa-solid fa-check"></i>
-
-        <span id="toast-message">
-            Copied to clipboard!
-        </span>
-
+  <!-- Export Modal Overlay -->
+  <div id="export-modal" class="modal-overlay" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Export Palette Tokens</h3>
+        <button id="close-modal" class="close-btn" type="button"><i class="fas fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-target="css">CSS Variables</button>
+          <button class="tab-btn" data-target="tailwind">Tailwind CSS</button>
+          <button class="tab-btn" data-target="json">JSON</button>
+        </div>
+        <pre><code id="export-code">/* Click generate to load tokens */</code></pre>
+      </div>
+      <div class="modal-footer">
+        <button id="modal-copy-btn" class="primary-btn" type="button"><i class="far fa-copy"></i> Copy Code</button>
+      </div>
     </div>
+  </div>
 
+  <!-- Global Toast Notification -->
+  <div id="toast" class="global-toast" role="status" aria-live="polite">
+    <i class="fas fa-circle-check"></i>
+    <span id="toast-msg">Copied token to clipboard</span>
+  </div>
 
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
